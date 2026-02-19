@@ -16,7 +16,39 @@ export class SignalsApi {
     name: ['']
   })
 
+  preferences = signal({
+    fast: true,
+    comfortable: true,
+    expensive: false
+  })
+
   name = signal('Sem nome')
+  count = signal(0);
+
+
+  multiply(){
+    this.count.update((value) => value * 2)
+  }
+
+  increment(){
+    this.count.update((value) => value + 1)
+  }
+
+  decrement(){
+    this.count.update((value) => value - 1)
+  }
+
+  reset(){
+    this.count.set(0);
+  }
+
+
+  toggleComfort() {
+    this.preferences.update((preferences) => ({
+      ...preferences,
+      comfortable: !preferences.comfortable
+    }))
+  }
 
   updateName(){
     const value = this.formSignals.controls.name.value;
