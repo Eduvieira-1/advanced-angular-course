@@ -12,8 +12,9 @@
     "isolatedModules": true,
     "experimentalDecorators": true,
     "importHelpers": true,
+    "moduleResolution": "node",
     "target": "ES2022",
-    "module": "preserve"
+
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
